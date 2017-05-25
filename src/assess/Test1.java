@@ -20,6 +20,7 @@ public class Test1 {
 //		System.setProperty("webdriver.chrome.driver", ".//Selenium Webdrivers//chromedriver.exe");
 //		System.setProperty("webdriver.gecko.driver" , ".//Selenium Webdrivers//geckodriver.exe");
 		
+//		Launch the browser
 //		driver = new InternetExplorerDriver();
 //		driver = new OperaDriver();
 		driver = new EdgeDriver();
