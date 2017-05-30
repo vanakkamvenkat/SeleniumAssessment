@@ -35,14 +35,11 @@ public class Test3 {
 		driver.get("https://www.irctc.co.in");
 		
 //		Enter User Id
-		driver.findElement(By.id("usernameId")).sendKeys("irctcsrive");
+		driver.findElement(By.id("usernameId")).sendKeys("Ronaldo");
 		
 //		Enter Password
-		driver.findElement(By.className("loginPassword")).sendKeys("barca");
-		
-//		Enter Captcha (Verification Code)  ===> FEASABILITY YET TO BE CHECKED
-//		System.out.println(driver.findElement(By.id("cimage")).getText());
-		
+		driver.findElement(By.className("loginPassword")).sendKeys("Garethbale");
+				
 //		Click Login Button
 		driver.findElement(By.id("loginbutton")).click();
 		
