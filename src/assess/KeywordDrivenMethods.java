@@ -1,5 +1,8 @@
 package assess;
 
+import java.util.concurrent.TimeUnit;
+
+import org.junit.rules.Timeout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,12 +41,15 @@ public class KeywordDrivenMethods {
 		driver.get("https://www.cleartrip.com/");
 	}
 	
-	public void flightBooking () throws InterruptedException {
+	public void flightBooking () {
 		driver.findElement(By.id("FromTag")).sendKeys("Chennai, IN - Chennai Airport (MAA)");
 		driver.findElement(By.id("ToTag")).sendKeys("Madurai, IN - Madurai (IXM)");
 		driver.findElement(By.id("DepartDate")).sendKeys("Fri, 30 Jun, 2017");
 		driver.findElement(By.id("SearchBtn")).click();
-		Thread.sleep(10000);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement price = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//a[@data-sort='price']")));
+		price.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.quit();
 	}
 	
